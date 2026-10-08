@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Motive Learn — build a little knowledge every day.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Motive Learn">
+  <title>Motive Learn — Grow every day</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" data-page-link="home" aria-label="Motive Learn home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>motive<span>learn</span></strong><small>Technology thoughtfully made.</small></span>
+      </a>
+      <div class="nav-label">YOUR SPACE</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-page="home"><span class="nav-icon" data-icon="home"></span><span>Overview</span></button>
+        <button class="nav-item" data-page="learn"><span class="nav-icon" data-icon="compass"></span><span>Explore learning</span><span class="nav-new">NEW</span></button>
+        <button class="nav-item" data-page="skills"><span class="nav-icon" data-icon="sparkles"></span><span>Skills & boosts</span></button>
+        <button class="nav-item" data-page="challenges"><span class="nav-icon" data-icon="target"></span><span>Daily challenges</span></button>
+        <button class="nav-item" data-page="progress"><span class="nav-icon" data-icon="chart"></span><span>Your progress</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-streak"><div class="side-streak-top"><span class="streak-flame">✦</span><span>YOUR STREAK</span><strong id="sideStreak">0 days</strong></div><div class="streak-week" id="streakWeek"></div><p id="streakCaption">Start a lesson to begin your streak.</p></div>
+        <button class="nav-item settings-nav" data-page="settings"><span class="nav-icon" data-icon="settings"></span><span>Settings</span></button>
+        <button class="profile-mini" data-page="settings"><span class="avatar" id="sidebarAvatar">M</span><span class="profile-name-wrap"><strong id="sidebarName">My learning space</strong><small>Personal profile</small></span><span class="more-dots">•••</span></button>
+      </div>
+    </aside>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <section class="app-main">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuButton" aria-label="Open navigation"><span data-icon="menu"></span></button>
+        <div class="topbar-context"><span class="context-kicker" id="contextKicker">YOUR LEARNING SPACE</span><h1 id="pageTitle">Good morning<span class="title-comma">,</span> learner.</h1></div>
+        <div class="topbar-actions">
+          <label class="search-box" for="globalSearch"><span data-icon="search"></span><input id="globalSearch" type="search" placeholder="Find a subject…" autocomplete="off"><kbd>⌘ K</kbd></label>
+          <button class="icon-button theme-button" id="themeToggle" aria-label="Toggle dark mode"><span data-icon="moon"></span></button>
+          <button class="top-avatar" id="topAvatar" data-page="settings" aria-label="Open profile">M</button>
+        </div>
+      </header>
+
+      <main class="main-view" id="mainView" tabindex="-1"></main>
+      <footer class="app-footer"><span>© <span id="yearNow"></span> Motive Labs</span><span>Made for curious minds <span class="footer-spark">✦</span></span><span class="local-label"><span class="local-dot"></span> Saved on this device</span></footer>
+    </section>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-item active" data-page="home"><span data-icon="home"></span><small>Home</small></button>
+    <button class="mobile-nav-item" data-page="learn"><span data-icon="compass"></span><small>Learn</small></button>
+    <button class="mobile-nav-item" data-page="skills"><span data-icon="sparkles"></span><small>Skills</small></button>
+    <button class="mobile-nav-item" data-page="progress"><span data-icon="chart"></span><small>Progress</small></button>
+  </nav>
+  <div id="modalRoot"></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+</body>
+</html>

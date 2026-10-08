@@ -1,0 +1,13 @@
+{
+  "name": "Motive Learn",
+  "short_name": "Motive Learn",
+  "description": "Build a little knowledge every day.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8fc",
+  "theme_color": "#f7f8fc",
+  "icons": [
+    {"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
